@@ -16,7 +16,7 @@ public class Game {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String title;
 	
 	@Column(name = "game_year")
 	private Integer yaer;
@@ -24,17 +24,21 @@ public class Game {
 	private String platforms;
 	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
+	
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
 	
 	public Game() {
 	}
 	
-	public Game(Long id, String name, Integer yaer, String genre, String platforms, Double score, String imgUrl,
+	public Game(Long id, String title, Integer yaer, String genre, String platforms, Double score, String imgUrl,
 			String shortDescription, String longDescription) {
 		this.id = id;
-		this.name = name;
+		this.title = title;
 		this.yaer = yaer;
 		this.genre = genre;
 		this.platforms = platforms;
@@ -53,11 +57,11 @@ public class Game {
 	}
 
 	public String getName() {
-		return name;
+		return title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String title) {
+		this.title = title;
 	}
 
 	public Integer getYaer() {
